@@ -51,6 +51,7 @@ Debug/
 Release/
 arm/
 arm64/
+.cache/
 .vs/
 .idea/
 .vscode/
