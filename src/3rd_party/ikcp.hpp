@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdint.h>
+#include <algorithm>
 #include <functional>
 #include <list>
 #include <map>

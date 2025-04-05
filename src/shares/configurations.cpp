@@ -571,14 +571,14 @@ std::pair<std::string, std::string> split_address(const std::string &input_addre
 				address_name.pop_back();
 
 				asio::error_code ec;
-				asio::ip::address_v6::from_string(address_name, ec);
+				asio::ip::make_address_v6(address_name, ec);
 				correct_address = !ec;
 			}
 		}
 		else
 		{
 			asio::error_code ec;
-			asio::ip::address_v4::from_string(address_name, ec);
+			asio::ip::make_address_v4(address_name, ec);
 			correct_address = !ec;
 		}
 	}

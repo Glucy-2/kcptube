@@ -253,8 +253,8 @@ private:
 
 		head_tail_xor(output_key, iv);
 
-		encoder = Botan::AEAD_Mode::create("AES-256/GCM", Botan::Cipher_Dir::Encryption);
-		decoder = Botan::AEAD_Mode::create("AES-256/GCM", Botan::Cipher_Dir::Decryption);
+		encoder = Botan::AEAD_Mode::create("AES-256/GCM", Botan::ENCRYPTION);
+		decoder = Botan::AEAD_Mode::create("AES-256/GCM", Botan::DECRYPTION);
 
 		encoder->set_key(key.data(), key.size());
 		encoder->set_associated_data((const uint8_t *)associated_data.c_str(), associated_data.size());
@@ -341,8 +341,8 @@ private:
 
 		std::copy(output.begin(), output.end(), iv.begin());
 
-		encoder = Botan::AEAD_Mode::create("AES-256/OCB", Botan::Cipher_Dir::Encryption);
-		decoder = Botan::AEAD_Mode::create("AES-256/OCB", Botan::Cipher_Dir::Decryption);
+		encoder = Botan::AEAD_Mode::create("AES-256/OCB", Botan::ENCRYPTION);
+		decoder = Botan::AEAD_Mode::create("AES-256/OCB", Botan::DECRYPTION);
 
 		encoder->set_key(key.data(), key.size());
 		encoder->set_associated_data((const uint8_t *)associated_data.c_str(), associated_data.size());
@@ -426,8 +426,8 @@ private:
 
 		std::copy(output.begin(), output.end(), iv.begin());
 
-		encoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::Cipher_Dir::Encryption);
-		decoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::Cipher_Dir::Decryption);
+		encoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::ENCRYPTION);
+		decoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::DECRYPTION);
 
 		encoder->set_key(key.data(), key.size());
 		encoder->set_associated_data((const uint8_t *)associated_data.c_str(), associated_data.size());
@@ -504,8 +504,8 @@ private:
 
 		head_tail_xor(output_key_384, iv);
 
-		encoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::Cipher_Dir::Encryption);
-		decoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::Cipher_Dir::Decryption);
+		encoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::ENCRYPTION);
+		decoder = Botan::AEAD_Mode::create("ChaCha20Poly1305", Botan::DECRYPTION);
 
 		encoder->set_key(key.data(), key.size());
 		encoder->set_associated_data((const uint8_t *)associated_data.c_str(), associated_data.size());
